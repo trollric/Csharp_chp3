@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticDataAndMembers", "StaticDataAndMembers\StaticDataAndMembers.csproj", "{E25E37AF-BD54-4EF1-95F4-B7CA052E5E52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E25E37AF-BD54-4EF1-95F4-B7CA052E5E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E25E37AF-BD54-4EF1-95F4-B7CA052E5E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E25E37AF-BD54-4EF1-95F4-B7CA052E5E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E25E37AF-BD54-4EF1-95F4-B7CA052E5E52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF5E4F34-F5C1-4D6F-830F-DB7A5DFB3D33}
+	EndGlobalSection
+EndGlobal
