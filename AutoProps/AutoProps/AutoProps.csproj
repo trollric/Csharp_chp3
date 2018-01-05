@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{924F9C99-CB4B-4D88-BB5D-6754426B3740}</ProjectGuid>
+    <ProjectGuid>{C976E4C5-FA46-43F7-82D4-1348016CB49B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EmployeeApp</RootNamespace>
-    <AssemblyName>EmployeeApp</AssemblyName>
+    <RootNamespace>AutoProps</RootNamespace>
+    <AssemblyName>AutoProps</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee.cs" />
+    <Compile Include="Car.cs" />
+    <Compile Include="Garage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
