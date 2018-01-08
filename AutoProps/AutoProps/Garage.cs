@@ -8,10 +8,10 @@ namespace AutoProps
 {
     class Garage
     {
-        // The hidden int backing field is set to zero!
-        public int NumberOfCars { get; set; }
-        // The hidden Car backing field is set to null!
-        public Car MyAuto { get; set; }
+        // The hidden int backing field is set to 1!
+        public int NumberOfCars { get; set; } = 1;
+        // The hidden Car backing field is set to a new car!
+        public Car MyAuto { get; set; } = new Car();
 
         // Must use consctructors to override default
         // values assigned to hidden abcking fields.
