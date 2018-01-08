@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace EmployeeApp
 {
+    partial
     class Employee
     {
         // Field data.
-        private string empName;
-        private int empID;
-        private float currPay;
-        private int empAge;
+       
 
         // Properties
         public int Age
@@ -48,17 +46,7 @@ namespace EmployeeApp
         }
 
         // Constructors
-        public Employee() { }
-
-        public Employee(string name, int id, float pay) : this(name, 0, id, pay) { }
-
-        public Employee(string name, int age, int id, float pay)
-        {
-            Name = name;
-            ID = id;
-            Age = age;
-            Pay = pay;
-        }
+        
 
         // Methods.
 
