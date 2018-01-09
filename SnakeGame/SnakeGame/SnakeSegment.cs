@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace SnakeGame
 {
-    class SnakeSegment : GameObject
+    sealed class SnakeSegment : GameObject
     {
+        // Fields and data
+        public int PrevX { get; set; }
+        public int PrevY { get; set; }
+
+        public SnakeSegment(Point pos) : base(pos, new Velocity(0,0), new Graphic('o',ConsoleColor.DarkGreen))
+        {
+
+        }
+
+        public override void Update()
+        {
+            PrevX = Pos.X;
+            PrevY = Pos.Y;
+        }
     }
 }

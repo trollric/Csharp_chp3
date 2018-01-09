@@ -14,7 +14,9 @@ namespace SnakeGame
 
         public GameObject()
         {
-
+            Pos = new Point();
+            Speed = new Velocity();
+            RenderData = new Graphic();
         }
         public GameObject(Point pos, Velocity vel, Graphic graphic)
         {
@@ -23,13 +25,18 @@ namespace SnakeGame
             RenderData = graphic;
         }
 
-        public void Render()
+        public virtual void Render()
         {
             Console.SetCursorPosition(Pos.X, Pos.Y);
             ConsoleColor prevColor = Console.ForegroundColor;
             Console.ForegroundColor = RenderData.Color;
             Console.Write(RenderData.Image);
             Console.ForegroundColor = prevColor;
+        }
+
+        public virtual void Update()
+        {
+
         }
     }
 }

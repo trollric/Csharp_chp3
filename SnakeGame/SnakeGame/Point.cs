@@ -17,7 +17,10 @@
             get { return x; }
             set { x = value; }
         }
+        public Point()
+        {
 
+        }
         public Point(int xPos, int yPos)
         {
             X = xPos;

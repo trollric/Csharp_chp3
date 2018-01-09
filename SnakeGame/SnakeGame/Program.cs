@@ -15,24 +15,36 @@ namespace SnakeGame
             // initialize the game
 
             Game game = new Game(60, 25);
-            game.FillWorld();
+            game.Spawn(GameObjectType.SnakeHead);
+            game.Spawn(GameObjectType.Apple);
+            testRender();
+
             Console.ReadLine();
 
-            while (true)
+            while(!game.Finished)
             {
-                // ReadInput
-                try
-                {
-                    if (Console.KeyAvailable)
-                    {
-                        ConsoleKey key = Console.ReadKey().Key;
-                    }
-                }
-                catch { }
-                // Update Gamestate
-                // Render
+                // wait for t time if facing north or south
+                // wait for t/2 time if facing east or west
+
+                // ReadInput uf possible
+                game.ReadInput();
+                // Update the game
+                game.Update();
+                // Render the game
+                game.Render();
+
             }
             
+        }
+
+        private static void testRender()
+        {
+            Game game2 = new Game(60,25);
+            game2.Spawn(GameObjectType.SnakeHead);
+            game2.Spawn(GameObjectType.Apple);
+            SnakeSegment seg = new SnakeSegment(new Point(14, 14));
+            game2.Render();
+            seg.Render();
         }
 
         
