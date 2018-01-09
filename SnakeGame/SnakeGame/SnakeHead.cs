@@ -19,8 +19,6 @@ namespace SnakeGame
         {
             Pos.X += Speed.XVector;
             Pos.Y += Speed.YVector;
-
-            base.Update();
         }
     }
 }
