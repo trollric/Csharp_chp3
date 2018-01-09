@@ -8,11 +8,16 @@ namespace SnakeGame
 {
     class Program
     {
+        
+
         static void Main(string[] args)
         {
             // initialize the game
-            char keyPressed = 'd';
-            Console.WriteLine("Test to the best");
+
+            Game game = new Game(60, 25);
+            game.FillWorld();
+            Console.ReadLine();
+
             while (true)
             {
                 // ReadInput
@@ -30,14 +35,8 @@ namespace SnakeGame
             
         }
 
-        private void Render()
-        {
-            // Clear the window
-            Console.Clear();
-            // Draw every object
+        
 
-            // Use Console.setCursorPosition(x,y)
 
-        }
     }
 }

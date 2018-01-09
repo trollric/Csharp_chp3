@@ -51,6 +51,7 @@
     <Compile Include="SnakeHead.cs" />
     <Compile Include="SnakeSegment.cs" />
     <Compile Include="Velocity.cs" />
+    <Compile Include="Game.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
