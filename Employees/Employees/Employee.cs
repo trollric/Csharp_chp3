@@ -46,9 +46,22 @@ namespace Employees
             get { return empSSN; }
             set { empSSN = value; }
         }
+        // Expose object through a custom property.
+        public BenefitPackage Benefits
+        {
+            get { return empBenefits; }
+            set { empBenefits = value; }
+        }
+        
 
 
         // Methods.
+
+        // Expose certain benefit behaviors of object.
+        public double GetBenefitCost()
+        {
+            return empBenefits.ComputePayDeduction();
+        }
 
         public void GiveBonus(float amount)
         {

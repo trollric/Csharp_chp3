@@ -14,6 +14,7 @@ namespace Employees
         protected float currPay;
         protected int empAge;
         protected readonly string empSSN;
+        protected BenefitPackage empBenefits = new BenefitPackage();
 
         public Employee() { }
 
