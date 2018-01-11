@@ -20,6 +20,7 @@ namespace SnakeGame
             Game game = new Game(60, 25);
             game.Spawn(GameObjectType.SnakeHead);
             game.Spawn(GameObjectType.Apple);
+            Console.CursorVisible = false;
             //testRender();
 
             //Console.ReadLine();

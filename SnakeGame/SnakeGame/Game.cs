@@ -32,7 +32,7 @@ namespace SnakeGame
         private Direction dir = Direction.east;
         private bool finished = false;
         private SnakeHead head;
-        private Apple apple;
+        private Apple apple = new Apple(new Point(20,20));
 
         public Direction Dir
         {
@@ -51,12 +51,13 @@ namespace SnakeGame
             world = new int[xBounds, yBounds];
         }
 
+
         public void GameOverScreen()
         {
             Console.Clear();
             Console.WriteLine("* * * * * * * * * * * * * * * * *");
             Console.WriteLine("  Thanks so much for testing my  ");
-            Console.WriteLine("       home made snake game.     ");
+            Console.WriteLine("       homemade snake game.      ");
             Console.WriteLine("      You scored {0} points!     ",points);
             Console.WriteLine("* * * * * * * * * * * * * * * * *");
             Console.ReadLine();
@@ -77,24 +78,36 @@ namespace SnakeGame
             switch (key)
             {
                 case ConsoleKey.LeftArrow:
-                    dir = Direction.west;
-                    head.Speed.XVector = -1;
-                    head.Speed.YVector = 0;
+                    if (dir != Direction.east)
+                    {
+                        dir = Direction.west;
+                        head.Speed.XVector = -1;
+                        head.Speed.YVector = 0;
+                    }
                     break;
                 case ConsoleKey.UpArrow:
-                    dir = Direction.north;
-                    head.Speed.XVector = 0;
-                    head.Speed.YVector = -1;
+                    if(dir != Direction.south)
+                    {
+                        dir = Direction.north;
+                        head.Speed.XVector = 0;
+                        head.Speed.YVector = -1;
+                    }                   
                     break;
                 case ConsoleKey.RightArrow:
-                    dir = Direction.east;
-                    head.Speed.XVector = 1;
-                    head.Speed.YVector = 0;
+                    if(dir != Direction.west)
+                    {
+                        dir = Direction.east;
+                        head.Speed.XVector = 1;
+                        head.Speed.YVector = 0;
+                    }                 
                     break;
                 case ConsoleKey.DownArrow:
-                    dir = Direction.south;
-                    head.Speed.XVector = 0;
-                    head.Speed.YVector = 1;
+                    if(dir != Direction.north)
+                    {
+                        dir = Direction.south;
+                        head.Speed.XVector = 0;
+                        head.Speed.YVector = 1;
+                    }
                     break;
             }
 
@@ -146,6 +159,15 @@ namespace SnakeGame
             int prevY = head.Pos.Y;
             // Update heads position
             head.Update();
+            if (head.Pos.X > xBounds - 1)
+                head.Pos.X = 1;
+            else if (head.Pos.X < 1)
+                head.Pos.X = xBounds - 1;
+            else if (head.Pos.Y < 1)
+                head.Pos.Y = yBounds - 1;
+            else if (head.Pos.Y > yBounds - 1)
+                head.Pos.Y = 1;
+
 
             // Update the entire body segment by segment
             // Also check if we have collided with the body
@@ -197,9 +219,10 @@ namespace SnakeGame
                     break;
                 case GameObjectType.Apple:
                     Random rng = new Random();
-                    int x = rng.Next(xBounds);
-                    int y = rng.Next(yBounds);
-                    apple = new Apple(new Point(x, y));
+                    int x = rng.Next(1,xBounds-1);
+                    int y = rng.Next(1,yBounds-1);
+                    apple.Pos.X = x;
+                    apple.Pos.Y = y;
                     break;
             }
         }

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Employees
 {
-    partial
-    class Employee
+    abstract partial class Employee
     {
         // Nested class
         // Will function as a contained class.
