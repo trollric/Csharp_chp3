@@ -11,6 +11,11 @@ namespace Shapes
         public Circle(){}
         public Circle(string name) : base(name){}
 
+        public override void Draw()
+        {
+            Console.WriteLine("This circle is called {0}",PetName);
+        }
+
         // Circle does not override Draw()
     }
 }

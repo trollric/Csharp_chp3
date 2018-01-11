@@ -18,6 +18,17 @@ namespace Shapes
             // Calls base class implementation
             cir.Draw();
             Console.WriteLine();
+
+            Shape[] myShapes = { new Hexagon(), new Circle(), new Hexagon("Mick Jaeger"), new Circle("Linda"), new Hexagon("Mc Beth") };
+
+            foreach(Shape s in myShapes)
+            {
+                s.Draw();
+            }
+            Console.WriteLine();
+            ThreeDCircle d = new ThreeDCircle();
+            ((Circle)d).Draw();
+            d.Draw();
             Console.ReadLine();
         }
     }

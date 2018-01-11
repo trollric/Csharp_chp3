@@ -18,9 +18,6 @@ namespace Shapes
         }
 
         // Methods
-        public virtual void Draw()
-        {
-            Console.WriteLine("Inside Shape.Draw()");
-        }
+        public abstract void Draw();
     }
 }
