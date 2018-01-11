@@ -9,6 +9,23 @@ namespace Employees
     partial
     class Employee
     {
+        // Nested class
+        // Will function as a contained class.
+        public class BenefitPackage
+        {
+            // Assume we have other members that represent
+            // Dental/health benefits, and so on.
+            public enum BenefitPackageLevel
+            {
+                Standard, Gold, Platinum
+            }
+
+            public double ComputePayDeduction()
+            {
+                return 125.0;
+            }
+        }
+
         // Properties
         public int Age
         {
@@ -44,7 +61,6 @@ namespace Employees
         public string SSN
         {
             get { return empSSN; }
-            set { empSSN = value; }
         }
         // Expose object through a custom property.
         public BenefitPackage Benefits
@@ -63,12 +79,12 @@ namespace Employees
             return empBenefits.ComputePayDeduction();
         }
 
-        public void GiveBonus(float amount)
+        public virtual void GiveBonus(float amount)
         {
             Pay += amount;
         }
 
-        public void DisplayStats()
+        public virtual void DisplayStats()
         {
             Console.WriteLine("Name: {0}", Name);
             Console.WriteLine("ID: {0}", ID);
