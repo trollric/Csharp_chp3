@@ -8,5 +8,9 @@ namespace Employees
 {
     sealed class PTSalesPerson : SalesPerson
     {
+        public PTSalesPerson(string name, int age, int empID, float currPay, string ssn, int saleNum) :base(name, age, empID, currPay, ssn, saleNum )   
+        {
+
+        }
     }
 }
