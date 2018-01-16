@@ -25,6 +25,11 @@ namespace ObjectOverrides
             }
             Console.WriteLine();
             TestModifiedClass();
+            // Static members of system.object
+            Person p3 = new Person("Sally", "Jones", 4);
+            Person p4 = new Person("Sally", "Jones", 4);
+            Console.WriteLine("\np3 and p4 have the same state: {0}",p3.Equals(p4));
+            Console.WriteLine("p3 and p4 are pointing to the same object: {0}",object.ReferenceEquals(p3,p4));
             Console.ReadLine();
         }
 
