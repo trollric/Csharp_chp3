@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,13 @@ namespace SimpleException
             catch(Exception e)
             {                
                 Console.WriteLine("\n*** Error! ***");
+                Console.WriteLine("Help to get at: {0}", e.HelpLink);
+                Console.WriteLine("\nStack: {0}\n", e.StackTrace);
+                Console.WriteLine("->Custom Data:");
+                foreach (DictionaryEntry de in e.Data)
+                {
+                    Console.WriteLine("-> {0}: {1}",de.Key,de.Value);
+                }
                 Console.WriteLine("Member name: {0}", e.TargetSite);
                 Console.WriteLine("Class defining member: {0}", e.TargetSite.DeclaringType);
                 Console.WriteLine("Method: {0}",e.TargetSite);

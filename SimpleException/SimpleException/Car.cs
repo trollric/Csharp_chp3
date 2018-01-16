@@ -43,7 +43,11 @@ namespace SimpleException
                     CurrSpeed = 0;
                     carIsDead = true;
                     // Use the throw keyword to raise an exception.
-                    throw new Exception(string.Format("{0} has overheated! T.T", PetName));
+                    Exception ex = new Exception(string.Format("{0} has overheated! T.T", PetName));
+                    ex.HelpLink = "http://www.CarsRUs.com";
+                    ex.Data.Add("Timestamp",string.Format("The car exoloded at {0}", DateTime.Now));
+                    ex.Data.Add("Cause", "You have a lead foot");
+                    throw ex;
                 }
                 else
                     Console.WriteLine("=> CurrSpeed = {0}", CurrSpeed);
