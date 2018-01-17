@@ -40,7 +40,9 @@ namespace SimpleException
             }
             // The Error has been handled, processing continues with the next statement
             Console.WriteLine("\n***** Out of Exeption logic *****");
-            
+            Console.WriteLine();
+            NullReferenceException nullRefEx = new NullReferenceException();
+            Console.WriteLine("nullRefEx is-a SystemException? {0}",nullRefEx is SystemException);
             Console.ReadLine();
         }
     }
