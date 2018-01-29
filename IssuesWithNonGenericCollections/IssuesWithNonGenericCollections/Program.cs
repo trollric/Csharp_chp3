@@ -18,7 +18,25 @@ namespace IssuesWithNonGenericCollections
             SimpleUnboxingOperation();
             Console.WriteLine();
             WorkWithArrayList();
+            ArrayListOfRandomObjects();
+            UsePersonCollection();
             Console.ReadLine();
+        }
+
+        private static void UsePersonCollection()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void ArrayListOfRandomObjects()
+        {
+            // The ArrayList can hold anything at all.
+            ArrayList allMyObjects = new ArrayList();
+            allMyObjects.Add(true);
+            allMyObjects.Add(new OperatingSystem(PlatformID.MacOSX, new Version(10, 0)));
+            allMyObjects.Add(66);
+            allMyObjects.Add(3.14);
+            Console.WriteLine();
         }
 
         private static void WorkWithArrayList()
