@@ -20,12 +20,43 @@ namespace IssuesWithNonGenericCollections
             WorkWithArrayList();
             ArrayListOfRandomObjects();
             UsePersonCollection();
+            UseGenericList();
             Console.ReadLine();
+        }
+
+        private static void UseGenericList()
+        {
+            Console.WriteLine("****** Fun with Generics ******\n");
+            // This List<> can only hold Person objects.
+            List<Person> morePeople = new List<Person>();
+            morePeople.Add(new Person("Frank", "Black", 50));
+            Console.WriteLine(morePeople[0]);
+            // This List<> can only hold Integers.
+            List<int> moreInts = new List<int>();
+            moreInts.Add(15);
+            moreInts.Add(10);
+            int sum = moreInts[0] + moreInts[1];
+            // Compile-time error! Can't add Person object
+            // to a list of ints!
+            // moreInts.Add(new Person());
         }
 
         private static void UsePersonCollection()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("****** Custom Person Collection ******\n");
+            PersonCollection myPeople = new PersonCollection();
+            myPeople.AddPerson(new Person("Homer", "Simpson", 40));
+            myPeople.AddPerson(new Person("Marge", "Simpson", 38));
+            myPeople.AddPerson(new Person("Lisa", "Simpson", 9));
+            myPeople.AddPerson(new Person("Bart", "Simpson", 7));
+            myPeople.AddPerson(new Person("Maggie", "Simpson", 2));
+            // This would be a compile-time error!
+            // myPeople.AddPerson(new Car());
+            foreach (Person p in myPeople)
+            {
+                Console.WriteLine(p);
+            }
+            Console.WriteLine();
         }
 
         private static void ArrayListOfRandomObjects()
