@@ -10,6 +10,7 @@ namespace FunWithGenericCollections
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("******Fun with Generic Collections******\n");
             UseGenericList();
             Console.ReadLine();
         }
