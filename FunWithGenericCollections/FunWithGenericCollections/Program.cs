@@ -15,7 +15,42 @@ namespace FunWithGenericCollections
             UseGenericStack();
             UseGenericQueue();
             UseSortedSet();
+            UseDictionary();
             Console.ReadLine();
+        }
+
+        private static void UseDictionary()
+        {
+            // Populate using the Add() method.
+            Dictionary<string, Person> peopleA = new Dictionary<string, Person>();
+            peopleA.Add("flash", new Person("Barry", "Allan", 24));
+            peopleA.Add("spiderman", new Person("Peter", "Parker", 16));
+            peopleA.Add("superman", new Person("Clark", "Kent", 35));
+            // Get the flash secret identity
+            Person flash = peopleA["flash"];
+            Console.WriteLine(flash);
+            Console.WriteLine();
+            // Populate with an initialization syntax
+            Dictionary<string, Person> peopleB = new Dictionary<string, Person>()
+            {
+                { "flash", new Person("Barry", "Allan", 24) },
+                { "spiderman", new Person("Peter", "Parker", 16)},
+                { "superman", new Person("Clark", "Kent", 35)}
+            };
+            // Get spiderman
+            Person spiderman = peopleB["spiderman"];
+            Console.WriteLine(spiderman);
+            Console.WriteLine();
+            // Populate with dictionary initialization syntax
+            Dictionary<string, Person> peopleC = new Dictionary<string, Person>()
+            {
+                ["flash"] = new Person("Barry", "Allan", 24),
+                ["spiderman"] = new Person("Peter", "Parker", 16),
+                ["superman"] = new Person("Clark", "Kent", 35)
+            };
+            // Get superman
+            Console.WriteLine(peopleC["superman"]);
+            Console.WriteLine();
         }
 
         private static void UseSortedSet()
