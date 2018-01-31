@@ -12,7 +12,34 @@ namespace FunWithGenericCollections
         {
             Console.WriteLine("******Fun with Generic Collections******\n");
             UseGenericList();
+            UseGenericStack();
             Console.ReadLine();
+        }
+
+        private static void UseGenericStack()
+        {
+            Stack<Person> stackOfPeople = new Stack<Person>();
+            stackOfPeople.Push(new Person("James", "Moriarty", 37));
+            stackOfPeople.Push(new Person { FirstName = "Greg", LastName = "Flyer", Age = 18 });
+            stackOfPeople.Push(new Person("Lilly", "Potter", 48));
+            // Now look at the top item, pop it, and look again.
+            Console.WriteLine("First person is: {0}", stackOfPeople.Peek());
+            Console.WriteLine("Lets use Pop to get and remove {0}",stackOfPeople.Pop());
+            Console.WriteLine("\nNow the first person is {0}", stackOfPeople.Peek());
+            Console.WriteLine("Lets use Pop to get and remove {0}", stackOfPeople.Pop());
+            Console.WriteLine("\nNow the first person is {0}", stackOfPeople.Peek());
+            Console.WriteLine("Lets use Pop to get and remove {0}", stackOfPeople.Pop());
+            // Now the Stack is empty
+            try
+            {
+                Console.WriteLine("\nFirst person is: {0}",stackOfPeople.Peek());
+                Console.WriteLine("Lets use Pop to get and remove {0}", stackOfPeople.Pop());
+            }
+            catch(InvalidOperationException e)
+            {
+                Console.WriteLine("\nError! {0}",e.Message);
+            }
+            Console.WriteLine();
         }
 
         private static void UseGenericList()
