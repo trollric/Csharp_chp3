@@ -13,7 +13,38 @@ namespace FunWithGenericCollections
             Console.WriteLine("******Fun with Generic Collections******\n");
             UseGenericList();
             UseGenericStack();
+            UseGenericQueue();
             Console.ReadLine();
+        }
+
+        private static void UseGenericQueue()
+        {
+            // Make a Queue with three people.
+            Queue<Person> peopleQ = new Queue<Person>();
+            peopleQ.Enqueue(new Person("Mary", "Popins", 42));
+            peopleQ.Enqueue(new Person("Ash", "Catchem", 10));
+            peopleQ.Enqueue(new Person("James", "Carpenter", 54));
+            // Peek at the first person in Q.
+            Console.WriteLine("{0} is first in line!",peopleQ.Peek().FirstName);
+            // Remove the people in the queue.
+            GetCoffe(peopleQ.Dequeue());
+            GetCoffe(peopleQ.Dequeue());
+            GetCoffe(peopleQ.Dequeue());
+            // Try to de-q again form Q.
+            try
+            {
+                GetCoffe(peopleQ.Dequeue());
+            }
+            catch(InvalidOperationException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            Console.WriteLine();
+        }
+
+        private static void GetCoffe(Person p)
+        {
+            Console.WriteLine("{0} got a coffee!", p.FirstName);
         }
 
         private static void UseGenericStack()
