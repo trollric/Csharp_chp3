@@ -14,7 +14,25 @@ namespace FunWithGenericCollections
             UseGenericList();
             UseGenericStack();
             UseGenericQueue();
+            UseSortedSet();
             Console.ReadLine();
+        }
+
+        private static void UseSortedSet()
+        {
+            SortedSet<Person> setOfPeople = new SortedSet<Person>(new SortPeopleByAge())
+            {
+                new Person("Lightning", "McQueen", 4),
+                new Person{FirstName = "Minty", LastName = "Snowman", Age = 18},
+                new Person("Gerge","RabbiTeller", 29),
+                new Person{ FirstName = "Martin", Age = 14, LastName = "McFly"}
+            };
+            // Please note that items are sorted by age!
+            foreach (Person p in setOfPeople)
+            {
+                Console.WriteLine(p);
+            }
+            Console.WriteLine();
         }
 
         private static void UseGenericQueue()
