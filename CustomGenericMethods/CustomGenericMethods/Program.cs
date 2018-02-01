@@ -19,9 +19,14 @@ namespace CustomGenericMethods
             Console.WriteLine();
             // Swap two strings
             string s1 = "Hello", s2 = "World";
-            Console.WriteLine("Before swap it reads: {0} {1}",s1,s2);
+            Console.WriteLine("Before swap it reads: {0} {1}", s1, s2);
             Swap(ref s1, ref s2);
-            Console.WriteLine("After swap it reads: {0} {1}",s1,s2);
+            Console.WriteLine("After swap it reads: {0} {1}", s1, s2);
+            // Swap two bool
+            bool b1 = true, b2 = false;
+            Console.WriteLine("Before swap it reads: {0} {1}", b1, b2);
+            Swap<bool>(ref b1, ref b2);
+            Console.WriteLine("After swap it reads: {0} {1}", b1, b2);
             Console.ReadLine();
         }
 
